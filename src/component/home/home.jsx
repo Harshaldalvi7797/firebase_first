@@ -1,6 +1,8 @@
 import React,{Component} from "react";
+import {connect} from "react-redux";
 import {database} from "../../firebase";
 import Notes from "../notes/notes";
+import {createNote} from "../../redux/action/index"; 
 
 class Home extends Component
 {
@@ -32,8 +34,9 @@ class Home extends Component
             title:this.state.title,
             descriptrion:this.state.description
         };
-        console.log(data);
-        database.push(data);
+        // console.log(data);
+        // database.push(data);
+        this.props.createNote(data);
         this.setState({title:"" ,description:""});
     }
     render()
@@ -74,4 +77,4 @@ class Home extends Component
 
    
 }
-export default Home;
+export default connect (null,{createNote}) (Home);
