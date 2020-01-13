@@ -1,4 +1,4 @@
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 import FetchNote from "../reducer/fetchNote";
-const reducers = combineReducers({note: FetchNote});
+const reducers = combineReducers({ note: FetchNote });
 export default reducers;
