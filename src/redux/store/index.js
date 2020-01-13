@@ -1,4 +1,6 @@
-import { combineReducers } from "redux";
+import { combineReducers, createStore, applyMiddleware } from "redux";
+import Thunk from "redux-thunk";
 import FetchNote from "../reducer/fetchNote";
-const reducers = combineReducers({ note: FetchNote });
-export default reducers;
+const rootReducers = combineReducers({ note: FetchNote });
+const store = createStore(rootReducers, applyMiddleware(Thunk));
+export default store;
