@@ -23,7 +23,7 @@ class Notes extends Component {
         <div className="row">
           {/* <h1>Hello </h1> */}
           {_.map(this.props.note, (value, key) => (
-            <div className="col-md-12" key={key}>
+            <div className="col-md-12" key={key} style={{ margin: "20px" }}>
               <div className="card text-left">
                 <div className="card-body">
                   <h4 className="card-title">{value.title}</h4>
