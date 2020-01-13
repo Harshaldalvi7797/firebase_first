@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchNote } from "../../redux/action/index";
+import { fetchNote, removeNote } from "../../redux/action/index";
 import _ from "lodash";
 
 class Notes extends Component {
@@ -28,6 +28,13 @@ class Notes extends Component {
                 <div className="card-body">
                   <h4 className="card-title">{value.title}</h4>
                   <p className="card-text">{value.descriptrion}</p>
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                    onClick={() => this.props.removeNote(key)}
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
             </div>
@@ -42,4 +49,4 @@ const maoStateToprops = state => {
   console.log(state);
   return { note: state.note };
 };
-export default connect(maoStateToprops, { fetchNote })(Notes);
+export default connect(maoStateToprops, { fetchNote, removeNote })(Notes);

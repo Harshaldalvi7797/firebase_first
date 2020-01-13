@@ -12,3 +12,9 @@ export const fetchNote = () => {
     });
   };
 };
+
+export const removeNote = id => {
+  return async dispatch => {
+    database.child(id).remove();
+  };
+};
