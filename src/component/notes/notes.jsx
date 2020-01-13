@@ -6,13 +6,11 @@ import _ from "lodash";
 
 class Notes extends Component
 {
-    constructor()
-    {
-        super();
-       
-
-        
-    }
+    // constructor()
+    // {
+    //     super();
+      
+    // }
 
     componentDidMount(){
         this.props.fetchNote();
@@ -20,14 +18,14 @@ class Notes extends Component
     }
     render()
     {
-        if(!this.props.notes) {return null;}
-        console.log("Notes data", this.props.notes);
+        if(!this.props.note) {return null;}
+        console.log("Notes data", this.props.note);
         return(
             <div className="container">
                 <div className="row">
                     {/* <h1>Hello </h1> */}
                     {
-                        _.map(this.props.notes ,(value,key)=>(
+                        _.map(this.props.note,(value,key)=>(
                         
                             <div className="col-md-12" key={key}>
                                 <div className="card text-left">
@@ -50,7 +48,9 @@ class Notes extends Component
 }
 
 const maoStateToprops = state =>
+
 {
-    return {note: state.Notes}
+    console.log(state)
+    return {note: state.note}
 }
 export default connect (maoStateToprops,{fetchNote}) (Notes);

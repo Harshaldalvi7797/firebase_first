@@ -10,6 +10,7 @@ import {database} from "../../firebase";
    {
        await database.on("value",(snapshot)=> {
      let a = snapshot.val();
+     console.log(a)
      dispatch ({type: "FETCH_NOTE" , payload : a });
 
      
