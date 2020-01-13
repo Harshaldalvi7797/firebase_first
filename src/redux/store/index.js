@@ -1,3 +1,4 @@
 import {combineReducers} from "redux";
-const reducers = combineReducers({a : console.log("hello")});
+import FetchNote from "../reducer/fetchNote";
+const reducers = combineReducers({note: FetchNote});
 export default reducers;

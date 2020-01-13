@@ -1,4 +1,6 @@
 import React,{Component} from "react";
+import {connect } from "react-redux";
+import { fetchNote } from "../../redux/action/index";
 import _ from "lodash";
 
 
@@ -10,6 +12,11 @@ class Notes extends Component
        
 
         
+    }
+
+    componentDidMount(){
+        this.props.fetchNote();
+
     }
     render()
     {
@@ -41,4 +48,9 @@ class Notes extends Component
         );
     }
 }
-export default Notes;
+
+const maoStateToprops = state =>
+{
+    return {note: state.Notes}
+}
+export default connect (maoStateToprops,{fetchNote}) (Notes);

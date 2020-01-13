@@ -16,13 +16,13 @@ class Home extends Component
         }
     };
 
-    componentDidMount()
-    {
-        database.on("value",(snapshot)=>{
-            this.setState({notes: snapshot.val()});
+    // componentDidMount()
+    // {
+    //     database.on("value",(snapshot)=>{
+    //         this.setState({notes: snapshot.val()});
 
-        })
-    }
+    //     })
+    // }
     handleChange = e =>
     {
        this.setState({[e.target.name] : e.target.value })
