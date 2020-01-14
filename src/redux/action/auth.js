@@ -5,3 +5,11 @@ export const googleAuth = () => {
     auth.signInWithPopup(googleProvider);
   };
 };
+
+export const FetchUserAuthData = () => {
+  return async dispatch => {
+    await auth.onAuthStateChanged(data => {
+      dispatch({ type: "FETCH_AUTHDATA", payload: data });
+    });
+  };
+};
